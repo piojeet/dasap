@@ -861,6 +861,7 @@ footer {
     header nav ul {
         position: fixed;
         right: -100%;
+        z-index: 100;
         top: 0;
         width: 80%;
         height: 100%;
@@ -917,6 +918,26 @@ footer {
     .swiper-button-prev-t {
         height: 50px;
         width: 50px;
+    }
+
+    .security-boxes .box h3 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 912px) {
+    .product-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .growth-boxes {
+        gap: 1rem;
+    }
+
+    .img-box-about {
+        width: 380px;
+        height: 380px;
+        aspect-ratio: 1 / 1;
     }
 }
 
@@ -1070,7 +1091,39 @@ footer {
     .testimonials-head {
         margin-bottom: 1rem;
     }
+
+    
 }
+
+@media only screen and (max-width: 550px) {
+    .security-boxes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .security-image-box {
+        height: 30vw;
+    }
+
+    .product-boxes {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 4vw;
+    }
+
+    .salution-boxes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .growth-boxes .box-bg-fill {
+        max-width: 160px;
+        height: 176px;
+    }
+
+    .growth-boxes .box {
+        width: 99px;
+        height: 107px;
+    }
+}
+
 
 
 @media only screen and (max-width: 425px) {
