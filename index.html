@@ -15,20 +15,36 @@
         <nav>
             <div class="logo"><img src="./images/Logo.png" alt="logo"></div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services & Solutions</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="services">Services & Solutions</a></li>
+                <li><a href="#" class="nav-link" data-section="security">Security</a></li>
+                <li><a href="#" class="nav-link" data-section="products">Products</a></li>
+                <li><a href="#" class="nav-link" data-section="testimonials">Testimonials</a></li>
+                <li><a href="#" class="nav-link" data-section="about">About Us</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contact us</a></li>
+                <div class="close-btn-m">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+                    <path d="m15 9-6 6"></path>
+                    <path d="m9 9 6 6"></path>
+                    </svg>
+                </div>
             </ul>
+
+            <div class="m-menu-btn">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12h18"></path>
+                    <path d="M3 6h18"></path>
+                    <path d="M3 18h18"></path>
+                </svg>
+            </div>
         </nav>
     </header>
 
     <main>
         <!--  HERO SECTION START  -->
-        <section id="hero-section">
+        <section id="hero-section" data-section="home">
             <div class="hero-container">
                 <div class="growth">
                     <div class="growth-box">
@@ -84,7 +100,7 @@
         <!--  TRUSTED SECTION END  -->
 
         <!--  SALUTION SECTION START  -->
-        <section id="salution-section">
+        <section id="salution-section" data-section="services">
             <div class="salution-container">
                 <div class="salution-head">
                     <h3 class="all-head">Trusted by</h3>
@@ -157,7 +173,7 @@
         <!--  SALUTION SECTION END  -->
 
         <!--  SECURITY SECTION START  -->
-        <section id="security-section">
+        <section id="security-section" data-section="security">
             <div class="security-container">
                 <div class="security-head">
                     <h3 class="all-head">Security</h3>
@@ -197,7 +213,7 @@
         <!--  SECURITY SECTION END  -->
 
         <!--  PRODUCT SECTION START  -->
-        <section id="product-section">
+        <section id="product-section" data-section="products">
             <div class="product-container">
                 <div class="product-head">
                     <h3 class="all-head">Products</h3>
@@ -258,7 +274,7 @@
         <!--  PRODUCT SECTION END  -->
 
         <!--  TESTIMONIALS SECTION END  -->
-        <section id="testimonials-section">
+        <section id="testimonials-section" data-section="testimonials">
             <div class="testimonials-container">
                 <div class="testimonials-head">
                     <h3 class="all-head">Testimonials</h3>
@@ -351,7 +367,7 @@
         <!--  TESTIMONIALS SECTION END  -->
 
         <!--  ABOUT SECTION START  -->
-        <section id="about-section">
+        <section id="about-section" data-section="about">
             <div class="about-container">
                 <div class="about-head">
                     <h3 class="all-head">About Us</h3>
@@ -391,7 +407,7 @@
         <!--  ABOUT SECTION END  -->
 
         <!--  CONTACT SECTION START  -->
-        <section id="contact-section">
+        <section id="contact-section" data-section="contact">
             <div class="contact-container">
                 <div class="contact-head">
                     <h3 class="all-head">contact us</h3>
@@ -439,13 +455,13 @@
             <div class="footer-container">
                 <div class="footer-logo"><img src="./images/Logo.png" alt="IMG"></div>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services & Solutions</a></li>
-                    <li><a href="#">Security</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Testimonials</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="#" class="nav-link" data-section="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-section="services">Services & Solutions</a></li>
+                    <li><a href="#" class="nav-link" data-section="security">Security</a></li>
+                    <li><a href="#" class="nav-link" data-section="products">Products</a></li>
+                    <li><a href="#" class="nav-link" data-section="testimonials">Testimonials</a></li>
+                    <li><a href="#" class="nav-link" data-section="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-section="contact">Contact us</a></li>
                 </ul>
 
                 <ul class="social-links">
@@ -461,25 +477,34 @@
         <!--   FOOTER END  -->
     </main>
 
-
+    <script src="script.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next-t",
+        prevEl: ".swiper-button-prev-t",
+    },
+    breakpoints: {
+        
+        // when window width is >= 1024px
+        1024: {
             slidesPerView: 2,
             spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next-t",
-                prevEl: ".swiper-button-prev-t",
-            },
-        });
+        },
+    }
+});
+
     </script>
 </body>
 
