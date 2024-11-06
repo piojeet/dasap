@@ -154,13 +154,20 @@ header nav ul a:hover::after {
     background-clip: text;
 }
 
+.hero-btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.5rem;
+}
+
 .get-btn {
     outline: none;
     border: none;
     display: block;
     background: linear-gradient(91.29deg, #1FA2FF -13.05%, rgba(18, 216, 250, 0.8) 60.61%, #A6FFCB 142.68%);
     width: fit-content;
-    margin: auto;
+    /* margin: auto; */
     padding: 10px 25px;
     border-radius: 100vh;
     transition: background .3s;
@@ -172,7 +179,35 @@ header nav ul a:hover::after {
     font-weight: 600;
 }
 
-.get-btn:hover {
+.learn-btn {
+    outline: none;
+    border: none;
+    display: block;
+    background: linear-gradient(91.29deg, #1FA2FF -13.05%, rgba(18, 216, 250, 0.8) 60.61%, #A6FFCB 142.68%);
+    width: fit-content;
+    /* margin: auto; */
+padding: 1px;
+    border-radius: 100vh;
+    transition: background .3s;
+    color: var(--white-colo);
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.learn-btn span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100vh;
+    padding: 10px 25px;
+    background: var(--bg-color);
+}
+
+.get-btn:hover,
+.learn-btn:hover {
     background: linear-gradient(91.29deg, #A6FFCB -13.05%, rgba(18, 216, 250, 0.8) 60.61%, #1FA2FF 142.68%);
 }
 
@@ -431,13 +466,13 @@ header nav ul a:hover::after {
     width: 100%;
 }
 
-.product-box-head {
+.product-box-head h3 {
     font-size: 22px;
     font-weight: 600;
     color: var(--bg-color);
     text-align: center;
     border-bottom: 1px solid #292E4233;
-    padding: 10px 0;
+    padding: 10px 10px;
     height: 90px;
     align-content: center;
 }
@@ -1041,8 +1076,9 @@ footer {
         font-size: 18px;
     }
 
-    .product-box-head {
+    .product-box-head h3 {
         font-size: 18px;
+        padding: 10px 0;
     }
 
     .product-boxes {
@@ -1146,6 +1182,10 @@ footer {
         margin-bottom: 1rem;
     }
 
+    .hero-head::before {
+        bottom: -50%;
+    }
+
 
 }
 
@@ -1180,7 +1220,7 @@ footer {
 
 
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 750px) {
     .growth-boxes .box-bg-fill {
         max-width: 135px;
         height: 152px;
@@ -1272,7 +1312,8 @@ footer {
 
     .hero-head::before,
     .hero-head::after {
-        display: none;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
 
@@ -1325,5 +1366,14 @@ footer {
     .growth-boxes .box-bg-fill {
         max-width: 120px;
         height: 130px;
+    }
+
+    .hero-btn-box {
+        gap: 1rem;
+    }
+
+    .learn-btn span,
+    .get-btn {
+        font-size: 14px;
     }
 }
