@@ -344,6 +344,25 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="swiper-slide">
+                                <div class="testimonials-boxes">
+                                    <div class="box">
+                                        <div>
+                                            <div class="testi-img-box">
+                                                <img src="./images/testi1.jpg" alt="IMG">
+                                            </div>
+                                            <h3>Sarah K</h3>
+                                            <p class="testi-owner-name">Retail Store Owner</p>
+                                            <img src="./images/clarity_block-quote-line.png" alt="IMG"
+                                                class="quete-line">
+                                            <p class="para">Sukri Technologies' SaaS POS has streamlined our retail
+                                                operations and
+                                                improved efficiency. The integration with our accounting software is
+                                                seamless. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -484,28 +503,46 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next-t",
-        prevEl: ".swiper-button-prev-t",
-    },
-    breakpoints: {
-        
-        // when window width is >= 1024px
-        1024: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-        },
-    }
-});
-
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next-t",
+                prevEl: ".swiper-button-prev-t",
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+            on: {
+                slideChangeTransitionEnd: updateSlideScale,  // Slide transition complete hone ke baad update karenge
+            },
+        });
+    
+        // Function to update the scale of slides
+        function updateSlideScale() {
+            swiper.slides.forEach((slide, index) => {
+                // Center slide ka index calculate karenge
+                const centerIndex = (swiper.activeIndex + Math.floor(swiper.params.slidesPerView / 2)) % swiper.slides.length;
+                
+                // Agar slide center me hai toh scale 1, warna 0.5
+                if (index === centerIndex) {
+                    slide.style.transform = 'scale(1)';
+                } else {
+                    slide.style.transform = 'scale(0.5)';
+                }
+            });
+        }
+    
+        // Initial scale setup
+        updateSlideScale();
     </script>
+    
 </body>
 
 </html>

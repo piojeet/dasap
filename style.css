@@ -35,7 +35,7 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95%;
+    width: 90%;
     max-width: 1240px;
     margin: auto;
 }
@@ -43,9 +43,10 @@ header nav {
 header nav ul {
     display: flex;
     align-items: center;
-    gap: 4vw;
+    gap: 3vw;
     font-size: 16px;
     list-style: none;
+    white-space: nowrap;
 }
 
 header nav ul a {
@@ -90,7 +91,7 @@ header nav ul a:hover::after {
 }
 
 .hero-container {
-    width: 95%;
+    width: 90%;
     max-width: 1240px;
     margin: auto;
 }
@@ -115,13 +116,36 @@ header nav ul a:hover::after {
     width: fit-content;
     font-size: 70px;
     font-weight: 600;
-    max-width: 800px;
+    max-width: 1130px;
     width: 100%;
     text-align: center;
     margin: auto;
     color: var(--white-colo);
     line-height: 1.2;
     margin-top: 1rem;
+    position: relative;
+}
+
+.hero-head::after {
+    content: '';
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    background: url('./images/star.png') no-repeat;
+    background-size: cover;
+    left: 0;
+    top: -25%;
+}
+
+.hero-head::before {
+    content: '';
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    background: url('./images/star.png') no-repeat;
+    background-size: cover;
+    right: 0;
+    bottom: 0;
 }
 
 .le-color {
@@ -218,7 +242,7 @@ header nav ul a:hover::after {
 
 .trusted-container {
     max-width: 1240px;
-    width: 95%;
+    width: 90%;
     margin: auto;
     padding: 5rem 0;
 }
@@ -256,7 +280,7 @@ header nav ul a:hover::after {
 /* SALUTION SECTION START */
 .salution-container {
     max-width: 1240px;
-    width: 95%;
+    width: 90%;
     margin: auto;
 }
 
@@ -310,7 +334,7 @@ header nav ul a:hover::after {
 /* SECURITY SECTION START */
 #security-section {
     max-width: 1240px;
-    width: 95%;
+    width: 90%;
     margin: auto;
     margin-top: 8rem;
 }
@@ -377,7 +401,7 @@ header nav ul a:hover::after {
 /* PRODUCT SECTION START */
 .product-container {
     max-width: 1240px;
-    width: 95%;
+    width: 90%;
     margin: auto;
     margin-top: 8rem;
 
@@ -441,18 +465,25 @@ header nav ul a:hover::after {
 
 /* TESTIMONIALS SECTION START */
 #testimonials-section {
-    /* background: var(--bg-color); */
+    background: var(--bg-color);
     margin: 8rem 0;
+    padding: 2rem 0;
 }
 
 .testimonials-container {
-    max-width: 1240px;
+    /* max-width: 1240px; */
     margin: auto;
+    /* width: 90%; */
 }
 
 .testimonials-head {
     text-align: center;
     margin-bottom: 3rem;
+}
+
+.testimonials-head h3,
+.testimonials-head p {
+    color: var(--white-colo);
 }
 
 .testimonials-boxes {
@@ -461,12 +492,22 @@ header nav ul a:hover::after {
     margin: auto;
 }
 
+/* .testimonials-boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
 .testimonials-boxes .box {
-    width: 415px;
+    /* width: 415px; */
     height: 433px;
     background: #424967;
     border-radius: 39% 17% 83% 33% / 33% 25% 37% 25%;
+    /* clip-path: polygon(12% 0, 95% 27%, 89% 98%, 0% 100%); */
     position: relative;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .testimonials-boxes .box::after {
@@ -530,8 +571,8 @@ header nav ul a:hover::after {
 }
 
 .swiper {
-    max-width: 1000px !important;
-    width: 90% !important;
+    /* max-width: 1000px !important; */
+    /* width: 90% !important; */
     margin: auto !important;
     /* overflow: visible !important; */
     padding-top: 50px !important;
@@ -539,7 +580,7 @@ header nav ul a:hover::after {
 
 .main-swiper {
     max-width: 1240px;
-    width: 95%;
+    width: 90%;
     margin: auto;
     position: relative;
 }
@@ -558,6 +599,7 @@ header nav ul a:hover::after {
     justify-content: center;
     color: var(--white-colo);
     cursor: pointer;
+    z-index: 10;
 }
 
 .swiper-button-next-t svg,
@@ -579,7 +621,14 @@ header nav ul a:hover::after {
     justify-content: center;
     color: var(--white-colo);
     cursor: pointer;
+    z-index: 10;
 }
+
+.swiper-slide {
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
 
 /* TESTIMONIALS SECTION END */
 
@@ -587,7 +636,7 @@ header nav ul a:hover::after {
 .about-container {
     max-width: 1240px;
     margin: 8rem auto;
-    width: 95%;
+    width: 90%;
 }
 
 .about-boxes {
@@ -645,7 +694,7 @@ header nav ul a:hover::after {
 /* CONTACT SECTION START */
 .contact-container {
     max-width: 1240px;
-    width: 95%;
+    width: 90%;
     margin: auto;
 }
 
@@ -825,11 +874,11 @@ header nav ul a:hover::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 2rem;
+    column-gap: 1.2rem;
     list-style: none;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     border-bottom: 1px solid var(--bg-color);
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
 }
 
 .social-links img {
@@ -846,6 +895,7 @@ header nav ul a:hover::after {
 .footer-container {
     max-width: 1240px;
     margin: auto;
+    width: 90%;
 }
 
 footer {
@@ -853,11 +903,12 @@ footer {
     padding-top: 2rem;
     margin-top: 8rem;
 }
+
 /* FOOTER END */
 
 /* MEDIA QUERY START  */
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px) {
     header nav ul {
         position: fixed;
         right: -100%;
@@ -890,7 +941,7 @@ footer {
         width: 3rem;
         height: 3rem;
     }
-    
+
     .close-btn-m {
         display: block;
         left: 1rem;
@@ -1007,7 +1058,8 @@ footer {
         font-size: 16px;
     }
 
-    .swiper-button-next-t, .swiper-button-prev-t {
+    .swiper-button-next-t,
+    .swiper-button-prev-t {
         height: 40px;
         width: 40px;
     }
@@ -1072,6 +1124,7 @@ footer {
     .testimonials-boxes .box {
         width: 286px;
         height: 348px;
+        margin: auto;
     }
 
     .testi-img-box {
@@ -1084,15 +1137,16 @@ footer {
         font-size: 14px;
     }
 
-    .swiper-button-next-t, .swiper-button-prev-t {
+    .swiper-button-next-t,
+    .swiper-button-prev-t {
         z-index: 1;
     }
-    
+
     .testimonials-head {
         margin-bottom: 1rem;
     }
 
-    
+
 }
 
 @media only screen and (max-width: 550px) {
@@ -1184,7 +1238,7 @@ footer {
         margin-top: 5rem;
     }
 
-    
+
 
     .img-box-about {
         width: 100%;
@@ -1214,6 +1268,11 @@ footer {
 
     #hero-section {
         padding-top: 1rem;
+    }
+
+    .hero-head::before,
+    .hero-head::after {
+        display: none;
     }
 }
 
