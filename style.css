@@ -1189,7 +1189,7 @@ footer {
 
 }
 
-@media only screen and (max-width: 550px) {
+/* @media only screen and (max-width: 550px) {
     .security-boxes {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -1216,11 +1216,11 @@ footer {
         width: 99px;
         height: 107px;
     }
-}
+} */
 
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 767px) {
     .growth-boxes .box-bg-fill {
         max-width: 135px;
         height: 152px;
